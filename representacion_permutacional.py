@@ -156,3 +156,6 @@ print("\nEvolución del algoritmo:")
 print(f"Fitness inicial: {historial[0]:.4f}")
 print(f"Fitness final: {historial[-1]:.4f}")
 print(f"Mejora total: {((historial[-1] - historial[0]) / abs(historial[0]) * 100):.1f}%")
+
+
+#
