@@ -119,7 +119,7 @@ Para completar y entregar la práctica, sigue estos pasos. Este es el flujo de t
 1.  Ve a la página principal del repositorio en GitHub: [https://github.com/GxJohan/algoritmos_evolutivos/](https://github.com/GxJohan/algoritmos_evolutivos/)
 2.  Haz clic en el botón **"Fork"** en la esquina superior derecha. Esto creará una copia exacta del repositorio bajo tu propia cuenta de GitHub.
 
-    ![Ilustración del botón Fork en GitHub](image.png)
+    ![Ilustración del botón Fork en GitHub](assets/image.png)
 
 ### Paso 2: Clona tu Fork a tu Máquina Local
 
