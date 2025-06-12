@@ -110,16 +110,59 @@ El archivo `notas_1u.csv` contiene las notas de los 39 alumnos con su asignació
 2. ¿Qué cambios necesitas hacer en el cromosoma?
 3. ¿Cómo afecta esto a la convergencia del algoritmo?
 
-## 📝 Entregables
+## 📝 Flujo de Trabajo y Entregables para Estudiantes
 
-1. **Código modificado**: Sube tus modificaciones a un fork del repositorio
-2. **Informe** (2-3 páginas):
-   - Comparación de representaciones
-   - Resultados de las actividades realizadas
-   - Conclusiones sobre cuándo usar cada representación
-3. **Extra** (opcional): 
-   - Implementa una representación híbrida
-   - Propón un problema diferente y resuélvelo con AG
+Para completar y entregar la práctica, sigue estos pasos. Este es el flujo de trabajo estándar utilizado en proyectos de software colaborativos.
+
+### Paso 1: Crea tu Propia Copia del Repositorio (Fork)
+
+1.  Ve a la página principal del repositorio en GitHub: [https://github.com/GxJohan/algoritmos_evolutivos/](https://github.com/GxJohan/algoritmos_evolutivos/)
+2.  Haz clic en el botón **"Fork"** en la esquina superior derecha. Esto creará una copia exacta del repositorio bajo tu propia cuenta de GitHub.
+
+### Paso 2: Clona tu Fork a tu Máquina Local
+
+Ahora, en lugar de clonar el repositorio original, clonarás **tu fork**.
+
+```bash
+# Reemplaza [TU_USUARIO_DE_GITHUB] con tu nombre de usuario
+git clone https://github.com/[TU_USUARIO_DE_GITHUB]/algoritmos_evolutivos.git
+cd algoritmos_evolutivos
+
+# Ahora sigue las instrucciones de instalación y uso que ya conoces
+git checkout s8_lab
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Paso 3: Realiza las Actividades
+
+Con el entorno configurado, modifica los archivos y completa las actividades descritas en la sección `🎯 Actividades para Estudiantes`.
+
+### Paso 4: Guarda y Sube tus Cambios a tu Fork
+
+A medida que avances, guarda tu trabajo en tu repositorio de GitHub.
+
+```bash
+# Añade todos los archivos que has modificado
+git add .
+
+# Crea un "commit" con un mensaje descriptivo de tus cambios
+git commit -m "Avance en las actividades de la S08"
+
+# Sube los cambios a tu repositorio fork en GitHub
+git push origin s8_lab
+```
+
+### Paso 5: Entrega de la Práctica
+
+Para la entrega final, proporciona lo siguiente:
+
+1.  **URL a tu Repositorio Fork**: El enlace a tu copia del proyecto en GitHub (ej. `https://github.com/[TU_USUARIO_DE_GITHUB]/algoritmos_evolutivos/`).
+2.  **Informe en PDF** (2-3 páginas), que puede estar dentro del mismo repositorio, con:
+    -   Comparación de las tres representaciones.
+    -   Resultados y conclusiones de las actividades realizadas.
+    -   Reflexión sobre cuándo y por qué usar cada tipo de representación.
 
 ## 🤔 Preguntas de Reflexión
 
