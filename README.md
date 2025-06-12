@@ -32,8 +32,11 @@ Un docente tiene 39 alumnos y necesita distribuirlos en 3 exámenes diferentes (
 ### Opción 1: Entorno Local
 ```bash
 # Clonar el repositorio
-git clone [URL_DEL_REPO]
-cd s8_p
+git clone https://github.com/GxJohan/algoritmos_evolutivos/
+cd algoritmos_evolutivos
+
+# Cambiar a la rama de laboratorio (contiene los archivos de la sesión)
+git checkout s8_lab
 
 # Crear entorno virtual
 python3 -m venv venv
@@ -51,8 +54,9 @@ python representacion_permutacional.py
 ### Opción 2: Google Colab
 ```python
 # En una celda de Colab:
-!git clone [URL_DEL_REPO]
-%cd s8_p
+!git clone https://github.com/GxJohan/algoritmos_evolutivos/
+%cd algoritmos_evolutivos
+!git checkout s8_lab
 !pip install -r requirements.txt
 
 # Ejecutar los archivos
