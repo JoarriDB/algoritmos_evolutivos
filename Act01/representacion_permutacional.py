@@ -2,7 +2,7 @@ import random
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv('notas_1u.csv')
+df = pd.read_csv('./Lab08/notas_1u.csv')
 alumnos = df['Alumno'].tolist()
 notas = df['Nota'].tolist()
 
@@ -67,7 +67,6 @@ def mutacion_intercambio(cromosoma):
     if random.random() < 0.3:
         pos1 = random.randint(0, 38)
         pos2 = random.randint(0, 38)
-        
         cromosoma_mutado[pos1], cromosoma_mutado[pos2] = cromosoma_mutado[pos2], cromosoma_mutado[pos1]
     
     return cromosoma_mutado
@@ -86,7 +85,6 @@ def mutacion_inversion(cromosoma):
 
 def algoritmo_genetico(generaciones=50, tam_poblacion=30):
     poblacion = [crear_cromosoma() for _ in range(tam_poblacion)]
-    
     historial_fitness = []
     
     for gen in range(generaciones):
@@ -96,7 +94,6 @@ def algoritmo_genetico(generaciones=50, tam_poblacion=30):
         historial_fitness.append(fitness_scores[0][1])
         
         nueva_poblacion = []
-        
         elite = int(tam_poblacion * 0.2)
         for i in range(elite):
             nueva_poblacion.append(fitness_scores[i][0])
@@ -107,13 +104,15 @@ def algoritmo_genetico(generaciones=50, tam_poblacion=30):
             
             hijo = mutacion_intercambio(padre1)
             hijo = mutacion_inversion(hijo)
-            
             nueva_poblacion.append(hijo)
         
         poblacion = nueva_poblacion
         
         if gen % 10 == 0:
             print(f"Generación {gen}: Mejor fitness = {fitness_scores[0][1]:.4f}")
+    
+    # Guardar historial
+    np.save("historial_permutacional.npy", historial_fitness)
     
     mejor_cromosoma = fitness_scores[0][0]
     return mejor_cromosoma, historial_fitness
@@ -157,5 +156,13 @@ print(f"Fitness inicial: {historial[0]:.4f}")
 print(f"Fitness final: {historial[-1]:.4f}")
 print(f"Mejora total: {((historial[-1] - historial[0]) / abs(historial[0]) * 100):.1f}%")
 
+# Guardar notas por examen
+notas_A = [notas[i] for i in asignaciones_finales['A']]
+notas_B = [notas[i] for i in asignaciones_finales['B']]
+notas_C = [notas[i] for i in asignaciones_finales['C']]
 
-#
+df_permutacional = pd.DataFrame({
+    'Examen': ['A']*13 + ['B']*13 + ['C']*13,
+    'Nota': notas_A + notas_B + notas_C
+})
+df_permutacional.to_csv("notas_permutacional.csv", index=False)

@@ -1,0 +1,34 @@
+ACTIVIDAD 5 – ANÁLISIS DE VISUALIZACIÓN DE LAS REPRESENTACIONES CROMOSÓMICAS
+
+1. EVOLUCIÓN DEL FITNESS
+- El gráfico de evolución del fitness por generación muestra claramente que la representación real tiene el valor más bajo (más negativo),
+indicando que su objetivo fue minimizar la desviación estándar y la varianza de manera más agresiva.
+Sin embargo, este valor se mantiene constante desde las primeras generaciones, lo cual evidencia una rápida convergencia.
+- La representación permutacional alcanza el mayor fitness positivo y converge en pocas generaciones (~5), mostrando gran estabilidad y efectividad
+en encontrar una solución equilibrada.
+- La representación binaria comienza con un fitness bajo, pero mejora ligeramente con el tiempo, estabilizándose alrededor de la generación 10.
+Aunque su rendimiento es aceptable, no alcanza el equilibrio logrado por la representación permutacional.
+
+
+2. HISTOGRAMA DE NOTAS POR EXAMEN
+Los histogramas individuales muestran cómo se distribuyen las notas de los alumnos entre los exámenes A, B y C para cada tipo de representación:
+- Binaria: presenta un ligero desbalance en las frecuencias, especialmente en el rango alto (notas de 18 a 20) que se concentran en el examen A.
+- Real: la distribución es más uniforme entre los tres exámenes. Las curvas KDE de densidad indican una mezcla de alumnos de distintos niveles, lo que sugiere diversidad.
+- Permutacional: también logra una distribución relativamente equilibrada, con curvas de densidad más similares y menos concentración en los extremos.
+
+
+3. DISTRIBUCIÓN GENERAL (BOXPLOT COMPARATIVO)
+El boxplot permite visualizar las diferencias entre representaciones de forma resumida:
+- La representación real muestra una mejor compacidad de los datos (menos dispersión), especialmente en los exámenes A y C.
+- La permutacional logra también una buena separación de los rangos y valores medios, confirmando su equilibrio entre los tres grupos.
+- La binaria presenta mayor variabilidad y diferencias más marcadas entre los tres exámenes, reflejando menor estabilidad en la asignación.
+
+
+4. CONCLUSIÓN GENERAL
+Según el análisis visual:
+- La representación permutacional fue la más eficiente en términos de equilibrio de notas por examen y velocidad de convergencia.
+- La representación real obtuvo valores de fitness más bajos, indicando una penalización más fuerte por la varianza, pero sin una mejora sustancial en las generaciones posteriores.
+- La representación binaria mostró la mayor dispersión y menos capacidad para mantener un equilibrio constante entre los grupos, lo cual es coherente con su codificación más rígida.
+
+Los gráficos proporcionan una comprensión clara de las ventajas y desventajas de cada representación, permitiendo visualizar cómo se comportan los algoritmos genéticos en problemas de agrupamiento académico.
+

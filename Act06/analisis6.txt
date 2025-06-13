@@ -1,0 +1,24 @@
+ACTIVIDAD 6 – PROBLEMA EXTENDIDO: DISTRIBUCIÓN EN 4 EXÁMENES
+
+MODIFICACIÓN REALIZADA:
+Se adaptó el programa basado en representación cromosómica real para distribuir a los 39 alumnos en 4 exámenes (A, B, C y D), en lugar de los 3 habituales.
+Para lograrlo se implementaron los siguientes cambios:
+- El cromosoma pasó de 117 genes (39 alumnos × 3 pesos) a 156 genes (39 alumnos × 4 pesos).
+- Se añadieron nuevos pesos para un cuarto examen (D) y se ajustó la lógica de decodificación.
+- Se establecieron los cupos como [10, 10, 10, 9] para A, B, C y D respectivamente.
+- La función de fitness se mantuvo similar, penalizando la desviación estándar de los promedios y la varianza interna.
+
+¿QUÉ CAMBIOS SE HICIERON EN EL CROMOSOMA?
+- El tamaño del cromosoma aumentó, ya que cada alumno ahora requiere 4 genes en lugar de 3 para representar sus probabilidades de asignación.
+- La función de creación de cromosomas, cruce, mutación y decodificación fueron ajustadas para trabajar con bloques de 4 pesos normalizados.
+
+¿CÓMO AFECTA ESTO A LA CONVERGENCIA DEL ALGORITMO?
+- El espacio de búsqueda aumentó, lo que significa que hay más combinaciones posibles y se requiere más tiempo o generaciones para encontrar soluciones óptimas.
+- A pesar de esto, el algoritmo logró una buena convergencia en 120 generaciones con un fitness final de aproximadamente -1.0684.
+- La desviación estándar entre los promedios de los exámenes fue de solo 0.0192, y la diferencia máxima entre promedios fue de 0.04, indicando una distribución altamente equilibrada.
+- Esto demuestra que el modelo basado en representación real mantiene su capacidad de adaptación y equilibrio incluso cuando se incrementa la complejidad del problema.
+
+CONCLUSIÓN:
+La modificación a 4 exámenes fue exitosa y demostró que los algoritmos genéticos pueden adaptarse eficientemente a configuraciones más complejas.
+Si bien el aumento en el número de grupos exige un cromosoma más grande y una búsqueda más extensa, los resultados finales muestran un excelente
+equilibrio en la asignación de alumnos y una baja variabilidad entre grupos.

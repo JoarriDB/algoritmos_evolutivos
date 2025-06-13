@@ -1,0 +1,29 @@
+Actividad 1 – Análisis Comparativo de Representaciones Cromosómicas
+Esta actividad consiste en ejecutar los tres algoritmos correspondientes a las representaciones binaria, permutacional y real para resolver el problema de distribución
+equitativa de 39 alumnos en 3 exámenes (A, B, C), y comparar sus resultados.
+
+¿Cuál representación logra mejor equilibrio entre los grupos?
+Tanto la representación real como la permutacional lograron una excelente distribución de alumnos con desviación estándar igual a 0.0363 entre los promedios de los
+tres grupos. Esto indica que ambas obtuvieron un alto nivel de equilibrio en cuanto al rendimiento académico.
+En cambio, la representación binaria presentó una desviación estándar mayor (0.4159), lo que refleja una distribución menos equitativa entre los grupos.
+Respuesta: Real y Permutacional (empate)
+
+
+¿Cuál converge más rápido?
+- Binaria: 100 generaciones, fitness estancado en -1000.0
+- Real: 120 generaciones, fitness final -1.0911
+- Permutacional: 50 generaciones, fitness final 0.2637
+Respuesta: Permutacional
+
+
+Resumen comparativo:
+Representación       | Desv. Estándar | Generaciones | Observaciones
+---------------------|----------------|--------------|------------------------------------------------------
+Binaria              | 0.4159         | 100          | No mantiene equilibrio en cantidad de alumnos por grupo
+Permutacional        | 0.0363         | 50           | Buena distribución de notas, rápida convergencia
+Real                 | 0.0363         | 120          | Buen equilibrio, pero requiere más generaciones
+
+Observaciones adicionales:
+- La representación binaria no garantiza una cantidad equilibrada de alumnos en cada grupo, lo que afecta su rendimiento.
+- La representación permutacional logra buena convergencia y balance mediante una simple secuencia de posiciones.
+- La representación real permite ajustes precisos, aunque es más lenta en encontrar una solución óptima.

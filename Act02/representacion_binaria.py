@@ -2,9 +2,10 @@ import random
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv('notas_1u.csv')
-alumnos = df['Alumno'].tolist()
+df = pd.read_csv('./Lab08/notas_1u.csv')
+
 notas = df['Nota'].tolist()
+alumnos = df['Alumno'].tolist()
 
 def crear_cromosoma():
     cromosoma = []
@@ -30,18 +31,35 @@ def decodificar_cromosoma(cromosoma):
 
 def calcular_fitness(cromosoma):
     asignaciones = decodificar_cromosoma(cromosoma)
+
+    # Penalización por cantidad desequilibrada de alumnos (suavizada)
+    penalizacion_cantidad = sum((len(asignaciones[ex]) - 13) ** 2 for ex in ['A', 'B', 'C'])
     
-    if any(len(asignaciones[ex]) != 13 for ex in ['A', 'B', 'C']):
-        return -1000
-    
-    promedios = {}
+    promedios = []
+    varianzas = []
+    diversidades = []
+
     for examen in ['A', 'B', 'C']:
         indices = asignaciones[examen]
+        if not indices:
+            return -1000  # penalización fuerte si un grupo está vacío
         notas_examen = [notas[i] for i in indices]
-        promedios[examen] = np.mean(notas_examen)
-    
-    desviacion = np.std(list(promedios.values()))
-    return -desviacion
+        
+        promedio = np.mean(notas_examen)
+        varianza = np.var(notas_examen)
+        diversidad = max(notas_examen) - min(notas_examen)
+
+        promedios.append(promedio)
+        varianzas.append(varianza)
+        diversidades.append(diversidad)
+
+    std_promedios = np.std(promedios)
+
+    # Nuevo fitness que incluye la penalización gradual
+    fitness = - (std_promedios + np.mean(varianzas)) + 0.5 * np.mean(diversidades)
+    fitness -= penalizacion_cantidad  # restamos la penalización por desbalance de cantidad
+
+    return fitness
 
 def mutacion(cromosoma):
     cromosoma_mutado = cromosoma.copy()

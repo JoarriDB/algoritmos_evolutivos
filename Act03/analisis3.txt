@@ -1,0 +1,49 @@
+Actividad 3 – Nuevo operador de mutación: mutacion_gaussiana
+
+Objetivo:
+Implementar un operador de mutación alternativo en representacion_real.py utilizando una perturbación gaussiana controlada mediante el parámetro sigma.
+El operador debe mantener la normalización (la suma de cada tripleta de pesos = 1).
+
+Implementación:
+Se añadió la función mutacion_gaussiana(cromosoma, sigma) que aplica ruido normal a cada tripleta de pesos de un alumno, manteniendo los valores entre 0 y 1 y
+reescalando para que sumen 1.
+
+Se probó el algoritmo con los siguientes valores de sigma: 0.01, 0.05, 0.1, 0.2, 0.5.
+| Sigma   | Fitness final | Desv. estándar entre promedios | Rango de notas promedio | Varianza promedio aprox |
+| ------- | ------------- | ------------------------------ | ----------------------- | ----------------------- |
+| 0.01    | -1.0911       | 0.0363                         | 9.7–11                  | ~10.0                   |
+| 0.05    | -1.0911       | 0.0363                         | 9.7–11                  | ~10.5                   |
+| 0.1     | -1.0911       | 0.0363                         | ~10.3                   | ~10.5                   |
+| 0.2     | -1.0911       | 0.0363                         | ~10.3                   | ~10.5                   |
+| 0.5     | -1.0911       | 0.0363                         | ~10.6                   | ~10.5                   |
+
+
+Resultados con mutación gaussiana:
+- Fitness inicial (con sigma = 0.01): -1.1840
+- Fitness final (con cualquier sigma): -1.0911
+- Promedios: A=15.38, B=15.38, C=15.46
+- Desviación estándar entre promedios: 0.0363
+- Rango de notas por grupo: entre 9 y 11
+- Varianza promedio por grupo: alrededor de 10.5
+
+Resultados con mutación original:
+- Fitness inicial: -1.1840
+- Fitness final: -1.0911
+- Promedios: A=15.38, B=15.38, C=15.46
+- Desviación estándar entre promedios: 0.0363
+- Rango de notas por grupo: de 9 a 20
+- Varianza: A=9.47, B=13.78, C=8.40 (promedio ≈ 10.55)
+
+Comparación:
+Ambos operadores lograron el mismo fitness final y el mismo equilibrio de promedios. Sin embargo, la mutación gaussiana mostró un comportamiento más estable y
+homogéneo en las varianzas, sin valores extremos como el 13.78 visto en la mutación aleatoria.
+
+Además, el operador gaussiano permite mayor control gracias al parámetro sigma, lo cual es útil para ajustar la agresividad de la mutación. La diversidad
+interna se mantiene alta y la estabilidad del algoritmo mejora en reproducibilidad.
+
+Conclusión:
+La mutación gaussiana ofrece un enfoque más controlado y eficiente para ajustar los pesos de los cromosomas reales. Aunque el fitness final fue el mismo
+que en la versión original, se observó mayor consistencia en la dispersión interna de notas. Se recomienda sigma = 0.1 como valor base por su buen equilibrio
+entre exploración y precisión.
+
+

@@ -1,0 +1,37 @@
+Actividad 4 – Restricción adicional en la representación permutacional
+
+Objetivo:
+Modificar la función calcular_fitness en representacion_permutacional.py para penalizar las soluciones en las que todos los alumnos con nota menor a 11 estén asignados al mismo examen.
+
+Implementación:
+Se añadió una penalización de -2 por cada examen que contenga exclusivamente alumnos con nota < 11. Esto se verificó con la condición:
+
+    if all(notas[i] < 11 for i in indices)
+
+De esta manera, el algoritmo evita que todos los alumnos con bajo rendimiento académico estén agrupados en un solo examen.
+
+Resultados con restricción:
+- Fitness inicial: 0.1550
+- Fitness final: 0.2637
+- Mejora total: 70.2%
+- Promedios: A=15.38, B=15.46, C=15.38
+- Rangos de notas: A=11, B=10, C=11
+- Desviación estándar entre promedios: 0.0363
+- La restricción fue respetada: ningún grupo tiene todos los alumnos con nota < 11.
+
+Resultados sin restricción (versión original):
+- Fitness inicial: 0.1081
+- Fitness final: 0.2637
+- Mejora total: 143.9%
+- Promedios: A=15.46, B=15.38, C=15.38
+- Rangos de notas: A=11, B=9, C=9
+- Desviación estándar entre promedios: 0.0363
+- Se detectó que el Examen A contenía múltiples alumnos con nota 9.0, lo cual podría haber concentrado a varios alumnos con rendimiento bajo en un mismo grupo.
+
+Comparación y análisis:
+Ambas versiones alcanzaron el mismo fitness final y equilibrio entre promedios. Sin embargo, la versión sin restricción permitió potencialmente la agrupación de varios alumnos de bajo rendimiento en un solo examen, lo cual no es deseable desde una perspectiva académica.
+
+La versión modificada, en cambio, garantiza que los alumnos con nota menor a 11 estén distribuidos entre diferentes exámenes, favoreciendo la equidad del proceso. Aunque mejora menos en porcentaje (70.2% vs 143.9%), cumple con el criterio pedagógico adicional, lo cual valida su efectividad.
+
+Conclusión:
+La incorporación de la restricción fue exitosa. Se logró mantener el mismo nivel de equilibrio en las asignaciones y al mismo tiempo se evitó la concentración de alumnos con bajo rendimiento. El algoritmo respetó la nueva condición sin afectar la calidad de la solución final.

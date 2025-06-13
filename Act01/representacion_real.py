@@ -2,7 +2,7 @@ import random
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv('notas_1u.csv')
+df = pd.read_csv('./Lab08/notas_1u.csv')
 alumnos = df['Alumno'].tolist()
 notas = df['Nota'].tolist()
 
@@ -100,34 +100,41 @@ def algoritmo_genetico(generaciones=150, tam_poblacion=100):
     
     mejor_global_fitness = float('-inf')
     mejor_global_cromosoma = None
-    
+    historial_fitness = []
+
     for gen in range(generaciones):
         fitness_scores = [(crom, calcular_fitness(crom)) for crom in poblacion]
         fitness_scores.sort(key=lambda x: x[1], reverse=True)
+
+        mejor_fitness_actual = fitness_scores[0][1]
+        historial_fitness.append(mejor_fitness_actual)
         
-        if fitness_scores[0][1] > mejor_global_fitness:
-            mejor_global_fitness = fitness_scores[0][1]
+        if mejor_fitness_actual > mejor_global_fitness:
+            mejor_global_fitness = mejor_fitness_actual
             mejor_global_cromosoma = fitness_scores[0][0].copy()
         
         nueva_poblacion = []
-        
+
         elite = int(tam_poblacion * 0.1)
         for i in range(elite):
             nueva_poblacion.append(fitness_scores[i][0])
-        
+
         while len(nueva_poblacion) < tam_poblacion:
-            padre1 = random.choice(poblacion[:tam_poblacion//4])[0] if isinstance(poblacion[0], tuple) else random.choice(poblacion[:tam_poblacion//4])
-            padre2 = random.choice(poblacion[:tam_poblacion//4])[0] if isinstance(poblacion[0], tuple) else random.choice(poblacion[:tam_poblacion//4])
-            
+            padre1 = random.choice(poblacion[:tam_poblacion//4])
+            padre2 = random.choice(poblacion[:tam_poblacion//4])
+
             hijo = cruce(padre1, padre2)
             hijo = mutacion(hijo)
             nueva_poblacion.append(hijo)
-        
+
         poblacion = nueva_poblacion
-        
+
         if gen % 30 == 0:
-            print(f"Generación {gen}: Mejor fitness = {fitness_scores[0][1]:.4f}")
-    
+            print(f"Generación {gen}: Mejor fitness = {mejor_fitness_actual:.4f}")
+
+    # Guardar historial
+    np.save("historial_real.npy", historial_fitness)
+
     return mejor_global_cromosoma
 
 print("REPRESENTACIÓN REAL")
@@ -158,3 +165,14 @@ for examen in ['A', 'B', 'C']:
 print(f"Promedios por examen: A={promedios[0]:.2f}, B={promedios[1]:.2f}, C={promedios[2]:.2f}")
 print(f"Desviación estándar entre promedios: {np.std(promedios):.4f}")
 print(f"Diferencia máxima entre promedios: {max(promedios) - min(promedios):.2f}")
+
+# Guardar notas por examen
+notas_A = [notas[i] for i in asignaciones_finales['A']]
+notas_B = [notas[i] for i in asignaciones_finales['B']]
+notas_C = [notas[i] for i in asignaciones_finales['C']]
+
+df_real = pd.DataFrame({
+    'Examen': ['A']*13 + ['B']*13 + ['C']*13,
+    'Nota': notas_A + notas_B + notas_C
+})
+df_real.to_csv("notas_real.csv", index=False)

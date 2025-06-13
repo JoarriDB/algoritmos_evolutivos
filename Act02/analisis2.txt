@@ -1,0 +1,21 @@
+Actividad 2 – Modificación de la función calcular_fitness
+
+Objetivo:
+Modificar la función calcular_fitness en representacion_binaria.py para penalizar grupos con varianza alta de notas y premiar diversidad de rendimiento.
+
+Resultados:
+
+Versión original:
+- Fitness fijo: -1000.0
+- Asignación inválida: 15-11-13
+- Desviación estándar entre promedios: 1.1237
+
+Versión modificada:
+- Fitness mejoró de -5.43 a -2.51 en 80 generaciones
+- Asignación válida: 13-13-13
+- Desviación estándar entre promedios: 2.5546
+
+Conclusión:
+La versión modificada cumple con los objetivos de la actividad. El algoritmo penaliza varianzas internas altas y recompensa la diversidad de notas dentro de cada grupo.
+Además, al reemplazar la penalización rígida por una penalización proporcional, se permite que el algoritmo evolutivo encuentre soluciones válidas y mejoradas a lo largo
+de las generaciones.
