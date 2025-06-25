@@ -1,91 +1,45 @@
-# 📚 ACTIVIDAD SEMANA 9: Operadores de Selección y Cruce
+# INSTRUCCIONES PARA ALUMNOS - SEMANA 10
+## Aplicaciones Clásicas: TSP y Asignación de Recursos
 
-## 🎯 Información General
+### INFORMACIÓN GENERAL
+- **Modalidad:** Trabajo individual
+- **Tiempo:** 35 minutos
+- **Puntaje:** 20 puntos total
+- **Material permitido:** Solo lapicero
 
-**Curso:** Algoritmos Evolutivos (1411-2278)  
-**Actividad:** Grupal Calificada (0-20 puntos)  
-**Duración:** 35 minutos  
-**Material permitido:** Solo lapicero (no calculadora, no laptop)
+### DISTRIBUCIÓN DE PUNTAJE
+- **Ejercicio 1:** 4 puntos - Análisis del TSP
+- **Ejercicio 2:** 4 puntos - Representación cromosómica para asignación
+- **Ejercicio 3:** 4 puntos - Función de aptitud en TSP
+- **Ejercicio 4:** 4 puntos - Operadores genéticos en TSP
+- **Ejercicio 5:** 4 puntos - Problema de asignación completo
 
-## 👥 Formación de Grupos
+### RECOMENDACIONES
 
-- **Tamaño:** Mínimo 4, máximo 5 integrantes
-- Completar TODOS los datos en la tabla de la primera página:
-  - Código de estudiante
-  - Apellidos y nombres completos
-  - Firma de cada integrante
+1. **Lee cuidadosamente** cada problema antes de responder
+2. **Gestiona tu tiempo:** Aproximadamente 7 minutos por ejercicio
+3. **Muestra tus cálculos** paso a paso para obtener puntaje parcial
+4. **Usa la representación permutacional** correctamente
+5. **Revisa** que todas las soluciones propuestas sean válidas
 
-## 📝 Estructura de la Actividad
+### CONCEPTOS CLAVE A RECORDAR
 
-### ACTIVIDAD 1: Selección por Torneo (8 puntos)
-**¿Qué van a hacer?**
-- Simular 3 torneos de selección con una población de 6 individuos
-- Cada torneo compara 2 individuos elegidos al azar
-- El que tenga mayor fitness "gana" el torneo
+- **TSP:** Cada ciudad se visita exactamente una vez
+- **Representación permutacional:** No se repiten elementos
+- **Función de aptitud:** En minimización, mayor aptitud = menor costo/distancia
+- **Asignación:** Cada tarea a un único recurso
+- **Operadores genéticos:** Deben mantener la validez de la permutación
 
-**Datos que tienen:**
-- Individuo A: fitness 85
-- Individuo B: fitness 45  
-- Individuo C: fitness 70
-- Individuo D: fitness 20
-- Individuo E: fitness 60
-- Individuo F: fitness 90
+### AYUDA MEMORIA
 
-### ACTIVIDAD 2: Cruce PMX (8 puntos)
-**¿Qué van a hacer?**
-- Aplicar el operador de cruce PMX a dos cromosomas
-- Identificar el mapeo entre segmentos intercambiados
-- Construir un hijo siguiendo las reglas del PMX
+**Para TSP con 4 ciudades A,B,C,D:**
+- Cromosoma [A,B,C,D] significa: A→B→C→D→A
+- Distancia total = d(A,B) + d(B,C) + d(C,D) + d(D,A)
 
-### ACTIVIDAD 3: Análisis Comparativo (4 puntos)
-**¿Qué van a hacer?**
-- Comparar diferentes métodos de selección
-- Justificar elecciones para problemas específicos
+**Para asignación con cromosoma [3,1,4,2]:**
+- Tarea 1 → Recurso 3
+- Tarea 2 → Recurso 1  
+- Tarea 3 → Recurso 4
+- Tarea 4 → Recurso 2
 
-## ⏰ Distribución del Tiempo Sugerida
-
-1. **Lectura y organización** (5 minutos)
-   - Leer toda la separata
-   - Asignar roles en el grupo
-   - Completar datos del grupo
-
-2. **Actividad 1: Selección** (15 minutos)
-   - Simulación de torneos
-   - Análisis de resultados
-
-3. **Actividad 2: Cruce PMX** (10 minutos)
-   - Aplicación del algoritmo
-   - Construcción del hijo
-
-4. **Actividad 3: Análisis** (5 minutos)
-   - Respuestas conceptuales
-   - Revisión final
-
-## 📋 Lista de Verificación Final
-
-Antes de entregar, verificar que:
-- [ ] Todos los integrantes completaron sus datos
-- [ ] Todas las preguntas están respondidas
-- [ ] Las respuestas están claramente escritas
-- [ ] Se utilizó solo lapicero (no lápiz)
-- [ ] La separata está completa y ordenada
-
-## 🎯 Criterios de Evaluación
-
-La calificación se basa en:
-- **Exactitud** de las respuestas técnicas
-- **Claridad** en las explicaciones
-- **Justificación** de las decisiones tomadas
-- **Completitud** de todas las secciones
-
----
-
-## 💡 Tips para el Éxito
-
-1. **Lean TODO primero** antes de empezar a responder
-2. **Trabajen en equipo** - discutan cada respuesta
-3. **No se apresuren** - es mejor una respuesta bien pensada
-4. **Usen el glosario** si no entienden algún término
-5. **Pregunten al docente** si tienen dudas sobre las instrucciones
-
-¡Buena suerte! 🍀
+¡Éxito en tu evaluación!
