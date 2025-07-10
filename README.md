@@ -1,45 +1,95 @@
-# INSTRUCCIONES PARA ALUMNOS - SEMANA 10
+# Algoritmos Evolutivos - Semana 10
 ## Aplicaciones Clásicas: TSP y Asignación de Recursos
 
-### INFORMACIÓN GENERAL
-- **Modalidad:** Trabajo individual
-- **Tiempo:** 35 minutos
-- **Puntaje:** 20 puntos total
-- **Material permitido:** Solo lapicero
+### 📋 Información General
+- **Universidad:** Universidad Nacional del Santa (UNS)
+- **Facultad:** Ingeniería
+- **Carrera:** Ingeniería de Sistemas e Informática
+- **Curso:** Algoritmos Evolutivos de Aprendizaje
+- **Código:** 1411-2278
+- **Docente:** Ms. Ing. Johan Max Alexander López Heredia
+- **Semestre:** 2025-I
+- **Estudiante:** Dueñas Blas, Joseph
+- **Código:** 0202114029
 
-### DISTRIBUCIÓN DE PUNTAJE
-- **Ejercicio 1:** 4 puntos - Análisis del TSP
-- **Ejercicio 2:** 4 puntos - Representación cromosómica para asignación
-- **Ejercicio 3:** 4 puntos - Función de aptitud en TSP
-- **Ejercicio 4:** 4 puntos - Operadores genéticos en TSP
-- **Ejercicio 5:** 4 puntos - Problema de asignación completo
+### 🎯 Descripción
+Esta práctica individual evalúa la comprensión de dos problemas fundamentales de optimización resueltos con algoritmos genéticos:
 
-### RECOMENDACIONES
+1. **TSP (Traveling Salesperson Problem):** Encontrar la ruta más corta que visite todas las ciudades exactamente una vez
+2. **Asignación de Recursos:** Asignar tareas a recursos minimizando costos o tiempos
 
-1. **Lee cuidadosamente** cada problema antes de responder
-2. **Gestiona tu tiempo:** Aproximadamente 7 minutos por ejercicio
-3. **Muestra tus cálculos** paso a paso para obtener puntaje parcial
-4. **Usa la representación permutacional** correctamente
-5. **Revisa** que todas las soluciones propuestas sean válidas
+### 📚 Contenido de la Práctica
 
-### CONCEPTOS CLAVE A RECORDAR
+#### Ejercicio 1: Análisis del TSP (4 puntos)
+- Identificación de componentes del problema para modelado con algoritmos genéticos
+- Representación cromosómica permutacional
+- Definición de variables de decisión, función objetivo y restricciones
 
-- **TSP:** Cada ciudad se visita exactamente una vez
-- **Representación permutacional:** No se repiten elementos
-- **Función de aptitud:** En minimización, mayor aptitud = menor costo/distancia
-- **Asignación:** Cada tarea a un único recurso
-- **Operadores genéticos:** Deben mantener la validez de la permutación
+#### Ejercicio 2: Representación Cromosómica para Asignación (4 puntos)
+- Interpretación de cromosomas en problemas de asignación
+- Mapeo de trabajos a máquinas
+- Validación de representaciones permutacionales
 
-### AYUDA MEMORIA
+#### Ejercicio 3: Función de Aptitud en TSP (4 puntos)
+- Cálculo de distancias totales para rutas específicas
+- Evaluación y comparación de fitness entre soluciones
+- Aplicación práctica de matriz de distancias
 
-**Para TSP con 4 ciudades A,B,C,D:**
-- Cromosoma [A,B,C,D] significa: A→B→C→D→A
-- Distancia total = d(A,B) + d(B,C) + d(C,D) + d(D,A)
+#### Ejercicio 4: Operadores Genéticos en TSP (4 puntos)
+- Mutación por intercambio (swap)
+- Análisis de limitaciones del cruce simple en problemas permutacionales
+- Problemas de validez en representaciones TSP
 
-**Para asignación con cromosoma [3,1,4,2]:**
-- Tarea 1 → Recurso 3
-- Tarea 2 → Recurso 1  
-- Tarea 3 → Recurso 4
-- Tarea 4 → Recurso 2
+#### Ejercicio 5: Problema de Asignación Completo (4 puntos)
+- Cálculo de tiempos totales para asignaciones específicas
+- Optimización de asignación empleado-proyecto
+- Evaluación comparativa de soluciones
 
-¡Éxito en tu evaluación!
+### 🔑 Conceptos Clave Evaluados
+
+- **Representación Permutacional:** Codificación donde la solución es un ordenamiento específico sin repetición
+- **Función de Aptitud:** Evaluación numérica de la calidad de una solución
+- **Operadores Genéticos Especializados:** Adaptaciones necesarias para problemas permutacionales
+- **Restricciones de Validez:** Condiciones que debe cumplir toda solución válida
+
+### 📊 Resultados Principales
+
+#### TSP - Análisis de Rutas
+- **Ruta 1 [A,B,C,D]:** Distancia total = 63 km
+- **Ruta 2 [A,D,C,B]:** Distancia total = 63 km
+- **Conclusión:** Ambas rutas son igualmente óptimas
+
+#### Asignación de Recursos
+- **Asignación [2,3,1]:** Tiempo total = 23 horas
+- **Asignación optimizada [1,2,3]:** Tiempo total = 17 horas
+- **Mejora:** 26% de reducción en tiempo total
+
+### 🛠️ Metodología
+- **Modalidad:** Trabajo individual presencial
+- **Duración:** 35 minutos
+- **Evaluación:** Sin uso de calculadora o laptop
+- **Puntuación:** 0-20 puntos
+
+### 📁 Estructura del Repositorio
+```
+algoritmos-evolutivos/
+├── main
+└── s10_lab/
+    └── practica_semana10_algoritmos_evolutivos.pdf
+```
+
+### 🌿 Información de la Rama
+- **Rama principal:** `main`
+- **Rama de la práctica:** `s10_lab`
+- **Archivo:** `practica_semana10_algoritmos_evolutivos.pdf`
+
+### 🎓 Aprendizajes Clave
+1. Los problemas TSP y asignación requieren representación permutacional
+2. Los operadores genéticos clásicos deben adaptarse para mantener validez
+3. La función de aptitud debe reflejar adecuadamente el objetivo de optimización
+4. Las restricciones del problema determinan la validez de las soluciones
+
+### 📝 Notas Importantes
+- Esta práctica forma parte de la evaluación continua del curso
+- Los problemas clásicos de optimización son base para desafíos reales más complejos
+- La comprensión de estos conceptos es fundamental para aplicaciones avanzadas de algoritmos evolutivos
